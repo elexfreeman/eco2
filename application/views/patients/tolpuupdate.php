@@ -20,7 +20,7 @@
                     <input type="date" class="form-control"
                            id="dateDir" name="dateDir"
                            autocomplete="off" required
-                           value="<?print date('Y-m-d')?>">
+                           value="<? echo $tolpu->date;?>">
                 </div>
 
                 <div class="row">
@@ -32,7 +32,9 @@
                             ?>
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="lpu"  value="<?php echo $lpu['counter'] ?>" required>
+                                    <input type="radio" name="lpu"
+                                           <?php if($tolpu->lpucode==$lpu['counter']) echo " checked "; ?>
+                                           value="<?php echo $lpu['counter'] ?>" required>
                                     <?php echo $lpu['NAME'] ?>
                                 </label>
                             </div>

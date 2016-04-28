@@ -188,12 +188,13 @@ class Search extends CI_Controller {
 				$this->data['funding']=$this->nrk_model->get_funding();
 				$this->data['type_obr']=$this->nrk_model->get_type_obr();
 				$this->data['dir']=$this->nrk_model->get_dir($id);
+				$this->data['tolpu']=$this->nrk_model->get_to_lpu($id);
 				$this->data['id']=$id;
 				if(count($this->data['dir'])>0)
 				{
 					$this->load->view('head',$this->data);
 					$this->load->view('navbar',$this->data);
-					$this->load->view('patients/tolpu',$this->data);
+					$this->load->view('patients/tolpuupdate',$this->data);
 					$this->load->view('footer',$this->data);
 				}
 				else
