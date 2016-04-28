@@ -12,6 +12,7 @@
         <div class="panel-body">
             <form id="add" name="add" method="post">
                 <input type="hidden" name="action" value="update">
+                <input type="hidden" name="id" value="<?php echo $id; ?>">
                 <div class="row">
                     <div class="col-sm-12">
                         <h4>кос</h4>

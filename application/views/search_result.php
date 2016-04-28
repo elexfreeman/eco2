@@ -60,9 +60,7 @@
         }
             ?>
             <td>Удалить</td>
-            <td><a href="<?php echo base_url('search/edit')."/".$row['counter'];
-
-                ?>">Редактировать</a>
+            <td><a href="<?php echo base_url('search/edit')."/".$row['counter'];?>">Редактировать</a>
             <?php
             if (0 <> $row['dirCounter']) {
                 print "<br />";
@@ -77,7 +75,13 @@
 
             print "<td>&nbsp;<a class='bluea' href='Reports/mz/zayavDirection.php?counter=".$row['counter']."'>В еxcel</a>&nbsp;</td>";
         if (0 == $row['dirCounter'])
-            print "<td>&nbsp;<a class='bluea' id='".$row['counter']."'>Направить в ЛПУ</a>&nbsp;</td>";
+        {
+            ?>
+            <td><a href="<?php echo base_url('search/tolpu')."/".$row['counter'];?>" >Направить в ЛПУ</a></td>
+
+            <?
+        }
+
         else {
                 if (1 == $row['fcounter'])
                     print "<td>&nbsp;<a class='bluea' href='Reports/mz/zayavDirectionDIrOms.php?counter=".$row['counter']."'>В еxcel</a></br>&nbsp;</td>";

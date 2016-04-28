@@ -210,14 +210,39 @@ lpucode,do) values ( ";
         $query = $this->db->query($sql);
     }
 
+    public function update($arg)
+    {
+        $sql="UPDATE ".$this->pit_mz_list_directions;
+
+        $sql.=" SET surname='".$arg['surname']."'".",name='".$arg['name']
+            ."'".",secname='".$arg['secname']
+            ."'".",adress='".$arg['adress']."'".",phone='".$arg['phone']
+            ."'".",[date]='".$arg['date']."'".",[birth]='".$arg['birth']
+            ."'". ",[protocol]='".$arg['protocol']
+            ."'". ",[comment]='".$arg['comment']
+            ."'". ",[funding_counter]='".$arg['fundingI']
+            ."'". ",[email]='".$arg['email']."'". ",[dateBirth]='".$arg['dateBirth']
+            ."'" . ",[docMan]='".$arg['docMan']."'" . ",[polis]='".$arg['polis']
+            ."'" . ",[snils]='".$arg['snils']."'" . ",[mkb]='".$arg['mkb']
+            ."'" . ",[typeObr]='".$arg['obr']."'". ",[lpucode]='".$arg['lpuZ']."'";
+        $sql.=" where counter=".$arg['id'];
+        //echo $sql;
+        $query = $this->db->query($sql);
+    }
+
     /*Выдает информацию по направлению*/
     public function get_dir($id)
     {
         $sql="SELECT * FROM ".$this->pit_mz_list_directions." where counter=".$id;
         $query = $this->db->query($sql);
-        echo $sql;
-        return $query->row(0);
 
+        return $query->row(0);
+    }
+
+    public function dir_lpu($arg)
+    {
+        $queryMan=" INSERT INTO ".$this->pit_mz_list_directions_lpu." (lpucode,[date],counterList)
+                        VALUES ('$_POST[lpucode]','$_POST[date]','$_POST[counterList]')";
     }
 
 }

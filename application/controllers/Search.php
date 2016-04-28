@@ -91,9 +91,9 @@ class Search extends CI_Controller {
 		{
 			if($this->input->post('action')=='update')
 			{
-				$this->nrk_model->add($this->input->post());
-				//header('Location: '.base_url());
-				//exit;
+				$this->nrk_model->update($this->input->post());
+				header('Location: '.base_url());
+				exit;
 			}
 			else
 			{
@@ -102,11 +102,54 @@ class Search extends CI_Controller {
 				$this->data['funding']=$this->nrk_model->get_funding();
 				$this->data['type_obr']=$this->nrk_model->get_type_obr();
 				$this->data['dir']=$this->nrk_model->get_dir($id);
+				$this->data['id']=$id;
 				if(count($this->data['dir'])>0)
 				{
 					$this->load->view('head',$this->data);
 					$this->load->view('navbar',$this->data);
 					$this->load->view('patients/edit',$this->data);
+					$this->load->view('footer',$this->data);
+				}
+				else
+				{
+					header('Location: '.base_url('auth'));
+					exit;
+				}
+			}
+
+
+		}
+		else
+		{
+			header('Location: '.base_url('auth'));
+			exit;
+		}
+	}
+
+	public function tolpu($id)
+	{
+		/*Если залогинен*/
+		if($this->auth_model->IsLogin())
+		{
+			if($this->input->post('action')=='update')
+			{
+				$this->nrk_model->update($this->input->post());
+				header('Location: '.base_url());
+				exit;
+			}
+			else
+			{
+				$this->data['id']=$this->security->xss_clean($id);
+				$this->data['eco_lpu']=$this->nrk_model->get_eco_lpu();
+				$this->data['funding']=$this->nrk_model->get_funding();
+				$this->data['type_obr']=$this->nrk_model->get_type_obr();
+				$this->data['dir']=$this->nrk_model->get_dir($id);
+				$this->data['id']=$id;
+				if(count($this->data['dir'])>0)
+				{
+					$this->load->view('head',$this->data);
+					$this->load->view('navbar',$this->data);
+					$this->load->view('patients/tolpu',$this->data);
 					$this->load->view('footer',$this->data);
 				}
 				else
