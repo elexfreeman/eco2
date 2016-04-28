@@ -28,6 +28,7 @@ class Eln extends CI_Controller {
 		/*Если залогинен*/
 		if($this->auth_model->IsLogin())
 		{
+			$this->data['count']=$this->nrk_model->get_info_count();
 			$this->load->model('mainpage_model');
 			$this->load->view('head',$this->data);
 			$this->load->view('navbar',$this->data);

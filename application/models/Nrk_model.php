@@ -276,6 +276,42 @@ lpucode,do) values ( ";
         return $query->row(0);
     }
 
+    public function get_info_count()
+    {
+        $sql=" SELECT
+	               b.cnt countpeople
+	               ,a.cntnp countdir
+	               ,b.cnt-a.cntnp peoplewait
+                FROM (
+
+                    SELECT
+                	   COUNT (*) [cntnp]
+                	   ,1 [join]
+                    FROM
+            	       ".$this->pit_mz_list_directions." dir
+                    JOIN
+            	       ".$this->pit_mz_list_directions_lpu." lpu
+                    ON
+            	       dir.counter=lpu.counterList
+                    WHERE
+            	       dir.d_fin IS NULL
+            	       and lpu.d_fin IS NULL
+            	       and DATALENGTH(surname)>0
+               ) as a
+               join (
+	               select
+		              count (*) [cnt]
+		              ,1 [join]
+	               from
+		          ".$this->pit_mz_list_directions."
+	                   where d_fin is null
+	                   and DATALENGTH (surname)>0
+                ) AS b ON a.[join]=b.[join]";
+        $query = $this->db->query($sql);
+
+        return $query->row(0);
+    }
+
 
 
 }
