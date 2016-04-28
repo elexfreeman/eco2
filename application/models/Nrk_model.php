@@ -231,18 +231,46 @@ lpucode,do) values ( ";
     }
 
     /*Выдает информацию по направлению*/
-    public function get_dir($id)
+    public function get_dir($dir_id)
     {
-        $sql="SELECT * FROM ".$this->pit_mz_list_directions." where counter=".$id;
+        $sql="SELECT * FROM ".$this->pit_mz_list_directions." where counter=".$dir_id;
         $query = $this->db->query($sql);
 
         return $query->row(0);
     }
 
-    public function dir_lpu($arg)
+    public function dir_lpu_insert($arg)
     {
-        $queryMan=" INSERT INTO ".$this->pit_mz_list_directions_lpu." (lpucode,[date],counterList)
-                        VALUES ('$_POST[lpucode]','$_POST[date]','$_POST[counterList]')";
+        foreach ($arg as $key=>$value )
+        {
+            $arg['$key'] = $this->security->xss_clean($value);
+        }
+        $arg['date'] = date( 'd.m.Y', strtotime( $arg['date'] ) );
+
+        $sql=" INSERT INTO ".$this->pit_mz_list_directions_lpu." (lpucode,[date],counterList)
+                        VALUES ('".$arg['lpu']."','".$arg['dateDir']."','".$arg['counterList']."')";
+        $this->db->query($sql);
+    }
+
+    public function dir_lpu_update($arg)
+    {
+        foreach ($arg as $key=>$value )
+        {
+            $arg['$key'] = $this->security->xss_clean($value);
+        }
+        $arg['date'] = date( 'd.m.Y', strtotime( $arg['date'] ) );
+
+       /* $sql=" INSERT INTO ".$this->pit_mz_list_directions_lpu." (lpucode,[date],counterList)
+                        VALUES ('".$arg['lpu']."','".$arg['dateDir']."','".$arg['counterList']."')";
+        $this->db->query($sql);*/
+    }
+
+    public function get_to_lpu($dir_id)
+    {
+        $sql="SELECT * FROM ".$this->pit_mz_list_directions_lpu." WHERE  counterList=".$this->security->xss_clean($dir_id);
+        $query = $this->db->query($sql);
+
+        return $query->row(0);
     }
 
 }

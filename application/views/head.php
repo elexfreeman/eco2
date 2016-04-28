@@ -8,6 +8,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>› Œ</title>
+    <link rel="shortcut icon" href="<?php echo base_url(); ?>favicon.ico" type="image/vnd.microsoft.icon" />
 
     <!-- Bootstrap -->
     <link href="/eco2/css/bootstrap.min.css" rel="stylesheet">

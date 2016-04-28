@@ -1,4 +1,3 @@
-<?php print_r($dir);?>
 <div class="container">
     <ol class="breadcrumb">
         <li><a href="/eco2">На главную</a></li>

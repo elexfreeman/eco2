@@ -63,8 +63,11 @@
             <td><a href="<?php echo base_url('search/edit')."/".$row['counter'];?>">Редактировать</a>
             <?php
             if (0 <> $row['dirCounter']) {
-                print "<br />";
-                print "&nbsp;<a class='bluea' id='" . $row['counter'] . "'>Редактировать(н)</a>&nbsp;";
+                ?>
+                <br>
+                <a href="<?php echo base_url('search/tolpuedit')."/".$row['counter'];?>">Редактировать(н)</a>&nbsp
+                <?php
+
             }
             ?>
             </td>
@@ -77,7 +80,7 @@
         if (0 == $row['dirCounter'])
         {
             ?>
-            <td><a href="<?php echo base_url('search/tolpu')."/".$row['counter'];?>" >Направить в ЛПУ</a></td>
+            <td><a href="<?php echo base_url('search/tolpuadd')."/".$row['counter'];?>" >Направить в ЛПУ</a></td>
 
             <?
         }
