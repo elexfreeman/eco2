@@ -10,7 +10,7 @@
         </div>
         <div class="panel-body">
             <form id="tolpu" name="tolpu" method="post">
-                <input type="hidden" name="action" value="tolpuadd">
+                <input type="hidden" name="action" value="tolpuedit">
                 <input type="hidden" name="counterList" value="<?php echo $dir->counter; ?>">
                 <p>ФИО: <strong id="fioDir"><?php echo $dir->surname; ?> <?php echo $dir->name; ?> <?php echo $dir->secname; ?></strong></p>
                 <p>Номер заявления: <strong id="counterMan"><?php echo $dir->counter; ?></strong></p>

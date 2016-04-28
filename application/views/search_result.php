@@ -1,5 +1,5 @@
 <?php if(count($res)>0){ ?>
-<table class="table table-striped table-hover">
+<table class="table table-striped table-hover res-table  table-bordered">
         <tr>
             <th>Номер</th>
             <th>Фамилия</th>
@@ -62,7 +62,7 @@
             <td>Удалить</td>
             <td><a href="<?php echo base_url('search/edit')."/".$row['counter'];?>">Редактировать</a>
             <?php
-            if (0 <> $row['dirCounter']) {
+            if ($row['dirCounter']!=0) {
                 ?>
                 <br>
                 <a href="<?php echo base_url('search/tolpuedit')."/".$row['counter'];?>">Редактировать(н)</a>&nbsp
@@ -77,7 +77,7 @@
 
 
             print "<td>&nbsp;<a class='bluea' href='Reports/mz/zayavDirection.php?counter=".$row['counter']."'>В еxcel</a>&nbsp;</td>";
-        if (0 == $row['dirCounter'])
+        if ($row['dirCounter']==0)
         {
             ?>
             <td><a href="<?php echo base_url('search/tolpuadd')."/".$row['counter'];?>" >Направить в ЛПУ</a></td>
@@ -86,7 +86,7 @@
         }
 
         else {
-                if (1 == $row['fcounter'])
+                if ($row['fcounter']==1)
                     print "<td>&nbsp;<a class='bluea' href='Reports/mz/zayavDirectionDIrOms.php?counter=".$row['counter']."'>В еxcel</a></br>&nbsp;</td>";
             else
                 print "<td>&nbsp;<a class='bluea' href='Reports/mz/zayavDirectionDir.php?counter=".$row['counter']."'>В еxcel</a></br>&nbsp;</td>";

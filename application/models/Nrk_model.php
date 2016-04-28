@@ -118,6 +118,7 @@ and
         }
 
         $sql.="ORDER BY list.date DESC, list.counter DESC";
+
         $query = $this->db->query($sql);
 
         return $query->result_array();
@@ -239,13 +240,15 @@ lpucode,do) values ( ";
         return $query->row(0);
     }
 
+
+
     public function dir_lpu_insert($arg)
     {
         foreach ($arg as $key=>$value )
         {
             $arg['$key'] = $this->security->xss_clean($value);
         }
-        $arg['date'] = date( 'd.m.Y', strtotime( $arg['date'] ) );
+        $arg['dateDir'] = date( 'd.m.Y', strtotime( $arg['dateDir'] ) );
 
         $sql=" INSERT INTO ".$this->pit_mz_list_directions_lpu." (lpucode,[date],counterList)
                         VALUES ('".$arg['lpu']."','".$arg['dateDir']."','".$arg['counterList']."')";
@@ -258,11 +261,11 @@ lpucode,do) values ( ";
         {
             $arg['$key'] = $this->security->xss_clean($value);
         }
-        $arg['date'] = date( 'd.m.Y', strtotime( $arg['date'] ) );
-
-       /* $sql=" INSERT INTO ".$this->pit_mz_list_directions_lpu." (lpucode,[date],counterList)
-                        VALUES ('".$arg['lpu']."','".$arg['dateDir']."','".$arg['counterList']."')";
-        $this->db->query($sql);*/
+        $arg['dateDir'] = date( 'd.m.Y', strtotime( $arg['dateDir'] ) );
+        $sql="UPDATE ".$this->pit_mz_list_directions_lpu." SET lpucode='".$arg['lpu']."', [date]='".$arg['dateDir']."'
+        WHERE  counterList=".$arg['counterList'];
+        echo $sql;
+        $this->db->query($sql);
     }
 
     public function get_to_lpu($dir_id)
@@ -272,5 +275,7 @@ lpucode,do) values ( ";
 
         return $query->row(0);
     }
+
+
 
 }

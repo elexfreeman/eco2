@@ -35,3 +35,7 @@
     width: 700px;
     margin:0 auto;;
 }
+
+.table-hover>tbody>tr:hover {
+    background-color: #E2E2E2;
+}
