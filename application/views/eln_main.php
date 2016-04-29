@@ -25,8 +25,8 @@
     </div>
     <div class="panel panel-default">
         <div class="panel-body">
-            <a class="btn btn-default" href="search/add" role="button">Добавить</a>
-            <a class="btn btn-default" href="Reports/mz/listEkoExcel.php" role="button">В Excel</a>
+            <a class="btn btn-info" href="search/add" role="button">Добавить</a>
+            <a class="btn btn-success" href="Reports/mz/listEkoExcel.php" role="button">В Excel</a>
         </div>
     </div>
 </div>

@@ -13,11 +13,9 @@
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li ><a href="<?php echo $user_name;?>"><?php echo 'user'; ?></a></li>
-                <li><a href="<?php echo $logout_url; ?>">Выход</a></li>
 
-            </ul>
+
+            <p class="navbar-text navbar-right"><a href="<?php echo $logout_url; ?>">Выход</a></p>
 
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

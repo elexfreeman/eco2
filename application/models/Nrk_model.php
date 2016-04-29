@@ -28,8 +28,8 @@ class Nrk_model extends CI_Model
         $this->pit_mz_type_obr='[AKTPAK].[dbo].[pit_mz_type_obr]';
         $this->pit_mz_type_funding_list='[AKTPAK].[dbo].[pit_mz_type_funding_list]';
 
-        $this->pit_mz_list_directions='AKTPAK..pit_mz_list_directions_elex';
-        $this->pit_mz_list_directions_lpu='AKTPAK..pit_mz_list_directions_lpu_elex';
+        $this->pit_mz_list_directions='AKTPAK..pit_mz_list_directions';
+        $this->pit_mz_list_directions_lpu='AKTPAK..pit_mz_list_directions_lpu';
 
     }
 
