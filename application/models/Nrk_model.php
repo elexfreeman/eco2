@@ -101,6 +101,19 @@ and
             $sql.="  and surname like'%".$filterSurname."%'";
         }
 
+        if (ISSET ($arg['filterName']) and $arg['filterName']<>""){
+            $filterName=$arg['filterName'];
+            $filterName= mb_convert_encoding($filterName,'windows-1251', 'utf-8');
+
+            $sql.="  and name like'%".$filterName."%'";
+        }
+        if (ISSET ($arg['filterSecname']) and $arg['filterSecname']<>""){
+            $filterSecname=$arg['filterSecname'];
+            $filterSecname= mb_convert_encoding($filterSecname,'windows-1251', 'utf-8');
+
+            $sql.="  and secname like'%".$filterSecname."%'";
+        }
+
         if (ISSET ($arg['filterNumberN']) and $arg['filterNumberN']<>""){
 
             $filterNumberN=$arg['filterNumberN'];
@@ -309,6 +322,15 @@ lpucode,do) values ( ";
                 ) AS b ON a.[join]=b.[join]";
         $query = $this->db->query($sql);
 
+        return $query->row(0);
+    }
+
+
+    function get_list_directions($counter)
+    {
+        $counter = $this->security->xss_clean($counter);
+        $sql='SELECT * FROM AKTPAK..pit_mz_list_directions where counter='.$counter;
+        $query = $this->db->query($sql);
         return $query->row(0);
     }
 

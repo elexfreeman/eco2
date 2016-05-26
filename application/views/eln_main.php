@@ -6,19 +6,45 @@
         </div>
         <div class="panel-body">
             <form class="form-inline" id="SearchForm">
-                <div class="form-group">
-                    <label for="exampleInputName2">Фамилия</label>
-                    <input onkeyup="eco.Search()" type="text" name="filterSurname" class="form-control"  placeholder="Например Иванов">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="filterSurname">Фамилия</label>
+                            <input onkeyup="eco.Search()" type="text" name="filterSurname" class="form-control"  placeholder="Например Иванов">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="filterName">Имя</label>
+                            <input onkeyup="eco.Search()" type="text" name="filterName" class="form-control"  placeholder="Например Иван">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="filterSecname">Отчество</label>
+                            <input onkeyup="eco.Search()" type="text" name="filterSecname" class="form-control"  placeholder="Например Иванович">
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail2">Номер заявления</label>
-                    <input onkeyup="eco.Search()" type="text" name="filterNumberZ" class="form-control"  placeholder="">
+                <hr>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="filterNumberZ">Номер заявления</label>
+                            <input onkeyup="eco.Search()" type="text" name="filterNumberZ" class="form-control"  placeholder="">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+
+                        <div class="form-group">
+                            <label for="filterNumberN">Номер направления</label>
+                            <input onkeyup="eco.Search()" type="text" name="filterNumberN" class="form-control"  placeholder="">
+                        </div>
+                    </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="exampleInputEmail2">Номер направления</label>
-                    <input onkeyup="eco.Search()" type="text" name="filterNumberN" class="form-control"  placeholder="">
-                </div>
+
+
 
             </form>
         </div>

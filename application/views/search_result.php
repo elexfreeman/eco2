@@ -93,7 +93,7 @@
             //print "<td>&nbsp;<a class='bluea' href='Reports/mz/zayavDirectionDir.php?counter=$row['counter']'>В еxcel</a></br>&nbsp;</td>";
         }
         print "<td>&nbsp;<a class='bluea' href='Reports/mz/zayavDirectionAgr.php?counter=".$row['counter']."'>В еxcel</a>&nbsp;</td>";
-        print "<td>&nbsp;<a class='bluea' id='".$row['counter']."'>Отправить</a>&nbsp;</td>";
+        print "<td>&nbsp;<a class='bluea'  href='".base_url('email/form')."/".$row['counter']."'>Отправить</a>&nbsp;</td>";
         //   print "<td>&nbsp;<a class='bluea' id='$row['counter']' onclick=femail('$row['counter']',2,'$row['surname']|$row['name']|$row['secname']');>Отправить</a>&nbsp;</td>";
         print"</tr>";
             ?>

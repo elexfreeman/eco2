@@ -21,7 +21,7 @@
                             ?>
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="lpuZ" <?php if($dir->lpucode==$lpu['counter']) echo "checked"; ?>  value="<?php echo $lpu['counter'] ?>" required>
+                                    <input type="radio" name="lpuZ" <?php if($dir->lpucode==$lpu['counter']) echo "checked"; ?>  value="<?php echo $lpu['counter'] ?>" >
                                     <?php echo $lpu['NAME'] ?>
                                 </label>
                             </div>
@@ -43,7 +43,7 @@
                                 <label>
                                     <input type="radio"
                                         <?php if($dir->funding_counter==$f['coutner']) echo "checked"; ?>
-                                           name="fundingI"  value="<?php echo $f['coutner'] ?>" required>
+                                           name="fundingI"  value="<?php echo $f['coutner'] ?>" >
                                     <?php echo $f['funding'] ?>
                                 </label>
                             </div>
@@ -61,7 +61,7 @@
                                 <label>
                                     <input type="radio" name="obr"
                                         <?php if($dir->typeObr==$obr['coutner']) echo "checked"; ?>
-                                           value="<?php echo $obr['coutner'] ?>" required>
+                                           value="<?php echo $obr['coutner'] ?>" >
                                     <?php echo $obr['obr'] ?>
                                 </label>
                             </div>
@@ -74,13 +74,13 @@
                 <h4>ДО</h4>
                 <div class="radio">
                     <label>
-                        <input type="radio" name="do1"  value="1" required <?php if((int)$dir->do==1) echo "checked "; ?> >
+                        <input type="radio" name="do1"  value="1"  <?php if((int)$dir->do==1) echo "checked "; ?> >
                         Да
                     </label>
                 </div>
                 <div class="radio">
                     <label>
-                        <input type="radio" name="do1"  value="0" required <?php if((int)$dir->do==0) echo "checked "; ?> >
+                        <input type="radio" name="do1"  value="0"  <?php if((int)$dir->do==0) echo "checked "; ?> >
                         Нет
                     </label>
                 </div>
@@ -92,7 +92,7 @@
                             <label for="surname">Фамилия</label>
                             <input type="text" class="form-control"
                                    name="surname" id="surname"
-                                   autocomplete="off" required
+                                   autocomplete="off" 
                                    value="<?php echo $dir->surname; ?>">
                         </div>
                     </div>
@@ -101,7 +101,7 @@
                             <label for="name">Имя</label>
                             <input type="text"
                                    value="<?php echo $dir->name; ?>"
-                                   class="form-control" name="name" id="name" autocomplete="off" required>
+                                   class="form-control" name="name" id="name" autocomplete="off" >
                         </div>
                     </div>
                     <div class="col-sm-4">
@@ -109,7 +109,7 @@
                             <label for="secname">Отчество</label>
                             <input type="text" class="form-control"
                                    value="<?php echo $dir->secname; ?>"
-                                   name="secname" id="secname" autocomplete="off" required>
+                                   name="secname" id="secname" autocomplete="off" >
                         </div>
                     </div>
                 </div>
@@ -120,7 +120,7 @@
                             <label for="polis">Полис</label>
                             <input type="text"
                                    value="<?php echo $dir->polis; ?>"
-                                   class="form-control" name="polis" id="polis" autocomplete="off" required>
+                                   class="form-control" name="polis" id="polis" autocomplete="off" >
                         </div>
                     </div>
                     <div class="col-sm-4">
@@ -128,7 +128,7 @@
                             <label for="snils">Снилс</label>
                             <input type="text"
                                    value="<?php echo $dir->snils; ?>"
-                                   class="form-control" name="snils" id="snils" autocomplete="off" required>
+                                   class="form-control" name="snils" id="snils" autocomplete="off" >
                         </div>
                     </div>
                     <div class="col-sm-4">
@@ -137,7 +137,7 @@
                             <label for="mkb">Код диагноза по МКБ</label>
                             <input type="text"
                                    value="<?php echo $dir->mkb; ?>"
-                                   class="form-control" name="mkb" id="mkb" autocomplete="off" required>
+                                   class="form-control" name="mkb" id="mkb" autocomplete="off" >
                         </div>
                     </div>
                 </div>
@@ -146,7 +146,7 @@
                     <label for="adress">Адрес регистрации</label>
                     <input type="text" class="form-control"
                            value="<?php echo $dir->adress; ?>"
-                           name="adress" id="adress" autocomplete="off" required>
+                           name="adress" id="adress" autocomplete="off" >
                 </div>
                 <hr>
                 <div class="row">
@@ -155,7 +155,7 @@
                             <label for="phone">Телефон Контакта</label>
                             <input type="text"
                                    value="<?php echo $dir->phone; ?>"
-                                   class="form-control" name="phone" id="phone" autocomplete="off" required>
+                                   class="form-control" name="phone" id="phone" autocomplete="off" >
                         </div>
                     </div>
                     <div class="col-sm-6">
@@ -163,7 +163,7 @@
                             <label for="email">email</label>
                             <input type="text"
                                    value="<?php echo $dir->email; ?>"
-                                   class="form-control" name="email" id="email" autocomplete="off" required>
+                                   class="form-control" name="email" id="email" autocomplete="off" >
                         </div>
                     </div>
                 </div>
@@ -174,7 +174,7 @@
                             <label for="birth">Год рождения</label>
                             <input type="number"
                                    value="<?php echo $dir->birth; ?>"
-                                   class="form-control" name="birth" id="birth" autocomplete="off" required>
+                                   class="form-control" name="birth" id="birth" autocomplete="off" >
                         </div>
                     </div>
                     <div class="col-sm-4">
@@ -182,7 +182,7 @@
                             <label for="date">Дата заявление</label>
                             <input type="date"
                                    value="<?php echo $dir->date; ?>"
-                                   class="form-control" name="date" id="date" autocomplete="off" value="<?print date('Y-m-d')?>" required>
+                                   class="form-control" name="date" id="date" autocomplete="off" value="<?print date('Y-m-d')?>" >
                         </div>
                     </div>
                     <div class="col-sm-4">
@@ -191,7 +191,7 @@
                             <label for="dateBirth">Дата рождения</label>
                             <input type="date"
                                    value="<?php echo $dir->dateBirth; ?>"
-                                   class="form-control" name="dateBirth" id="dateBirth" autocomplete="off" required>
+                                   class="form-control" name="dateBirth" id="dateBirth" autocomplete="off" >
                         </div>
                     </div>
                 </div>
@@ -200,18 +200,18 @@
                     <label for="docMan">Документ, удостоверяющий личность</label>
                     <input type="text"
                            value="<?php echo $dir->docMan; ?>"
-                           class="form-control" name="docMan" id="docMan" autocomplete="off" required>
+                           class="form-control" name="docMan" id="docMan" autocomplete="off" >
                 </div>
                 <hr>
                 <div class="form-group">
                     <label for="protocol">Протокол</label>
-                    <textarea class="form-control" rows="3" name="protocol" id="protocol" required><?php echo $dir->protocol; ?></textarea>
+                    <textarea class="form-control" rows="3" name="protocol" id="protocol" ><?php echo $dir->protocol; ?></textarea>
                 </div>
 
                 <hr>
                 <div class="form-group">
                     <label for="comment">Примечание</label>
-                    <textarea class="form-control" rows="3" name="comment" id="comment" required><?php echo $dir->comment; ?></textarea>
+                    <textarea class="form-control" rows="3" name="comment" id="comment" ><?php echo $dir->comment; ?></textarea>
                 </div>
 
                 <button type="submit" class="btn btn-success">Обновить</button>

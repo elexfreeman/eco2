@@ -1,6 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+
+
 class Email extends CI_Controller {
 
 	/*переменна€ дл€ вывода в view*/
@@ -44,24 +46,25 @@ class Email extends CI_Controller {
 
 	public function form($patient_id)
 	{
+
 		/*≈сли залогинен*/
 		if($this->auth_model->IsLogin())
 		{
-			if($this->input->post('action')=='add')
+			if($this->input->post('action')=='email_send')
 			{
-				$this->nrk_model->add($this->input->post());
+
+				///$this->nrk_model->add($this->input->post());
 				header('Location: '.base_url());
 				exit;
 
 			}
 			else
 			{
-				$this->data['eco_lpu']=$this->nrk_model->get_eco_lpu();
-				$this->data['funding']=$this->nrk_model->get_funding();
-				$this->data['type_obr']=$this->nrk_model->get_type_obr();
+				$this->data['direction']=$this->nrk_model->get_list_directions($patient_id);
+
 				$this->load->view('head',$this->data);
 				$this->load->view('navbar',$this->data);
-				$this->load->view('patients/add',$this->data);
+				$this->load->view('patients/email_form',$this->data);
 				$this->load->view('footer',$this->data);
 			}
 

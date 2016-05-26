@@ -20,7 +20,7 @@
                             ?>
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="lpuZ"  value="<?php echo $lpu['counter'] ?>" required>
+                                    <input type="radio" name="lpuZ"  value="<?php echo $lpu['counter'] ?>" >
                                     <?php echo $lpu['NAME'] ?>
                                 </label>
                             </div>
@@ -40,7 +40,7 @@
                             ?>
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="fundingI"  value="<?php echo $f['coutner'] ?>" required>
+                                    <input type="radio" name="fundingI"  value="<?php echo $f['coutner'] ?>" >
                                     <?php echo $f['funding'] ?>
                                 </label>
                             </div>
@@ -56,7 +56,7 @@
                             ?>
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="obr"  value="<?php echo $obr['coutner'] ?>" required>
+                                    <input type="radio" name="obr"  value="<?php echo $obr['coutner'] ?>" >
                                     <?php echo $obr['obr'] ?>
                                 </label>
                             </div>
@@ -69,13 +69,13 @@
                 <h4>ДО</h4>
                 <div class="radio">
                     <label>
-                        <input type="radio" name="do1"  value="1" required>
+                        <input type="radio" name="do1"  value="1" >
                         Да
                     </label>
                 </div>
                 <div class="radio">
                     <label>
-                        <input type="radio" name="do1"  value="0" required checked>
+                        <input type="radio" name="do1"  value="0"  checked>
                         Нет
                     </label>
                 </div>
@@ -85,19 +85,19 @@
                     <div class="col-sm-4">
                         <div class="form-group">
                             <label for="surname">Фамилия</label>
-                            <input type="text" class="form-control" name="surname" id="surname" autocomplete="off" required>
+                            <input type="text" class="form-control" name="surname" id="surname" autocomplete="off" >
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="form-group">
                             <label for="name">Имя</label>
-                            <input type="text" class="form-control" name="name" id="name" autocomplete="off" required>
+                            <input type="text" class="form-control" name="name" id="name" autocomplete="off" >
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="form-group">
                             <label for="secname">Отчество</label>
-                            <input type="text" class="form-control" name="secname" id="secname" autocomplete="off" required>
+                            <input type="text" class="form-control" name="secname" id="secname" autocomplete="off" >
                         </div>
                     </div>
                 </div>
@@ -106,40 +106,40 @@
                     <div class="col-sm-4">
                         <div class="form-group">
                             <label for="polis">Полис</label>
-                            <input type="text" class="form-control" name="polis" id="polis" autocomplete="off" required>
+                            <input type="text" class="form-control" name="polis" id="polis" autocomplete="off" >
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="form-group">
                             <label for="snils">Снилс</label>
-                            <input type="text" class="form-control" name="snils" id="snils" autocomplete="off" required>
+                            <input type="text" class="form-control" name="snils" id="snils" autocomplete="off" >
                         </div>
                     </div>
                     <div class="col-sm-4">
 
                         <div class="form-group">
                             <label for="mkb">Код диагноза по МКБ</label>
-                            <input type="text" class="form-control" name="mkb" id="mkb" autocomplete="off" required>
+                            <input type="text" class="form-control" name="mkb" id="mkb" autocomplete="off" >
                         </div>
                     </div>
                 </div>
                 <hr>
                 <div class="form-group">
                     <label for="adress">Адрес регистрации</label>
-                    <input type="text" class="form-control" name="adress" id="adress" autocomplete="off" required>
+                    <input type="text" class="form-control" name="adress" id="adress" autocomplete="off" >
                 </div>
                 <hr>
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="phone">Телефон Контакта</label>
-                            <input type="text" class="form-control" name="phone" id="phone" autocomplete="off" required>
+                            <input type="text" class="form-control" name="phone" id="phone" autocomplete="off" >
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="email">email</label>
-                            <input type="text" class="form-control" name="email" id="email" autocomplete="off" required>
+                            <input type="text" class="form-control" name="email" id="email" autocomplete="off" >
                         </div>
                     </div>
                 </div>
@@ -148,38 +148,38 @@
                     <div class="col-sm-4">
                         <div class="form-group">
                             <label for="birth">Год рождения</label>
-                            <input type="number" class="form-control" name="birth" id="birth" autocomplete="off" required>
+                            <input type="number" class="form-control" name="birth" id="birth" autocomplete="off" >
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="form-group">
                             <label for="date">Дата заявление</label>
-                            <input type="date" class="form-control" name="date" id="date" autocomplete="off" value="<?print date('Y-m-d')?>" required>
+                            <input type="date" class="form-control" name="date" id="date" autocomplete="off" value="<?print date('Y-m-d')?>" >
                         </div>
                     </div>
                     <div class="col-sm-4">
 
                         <div class="form-group">
                             <label for="dateBirth">Дата рождения</label>
-                            <input type="date" class="form-control" name="dateBirth" id="dateBirth" autocomplete="off" required>
+                            <input type="date" class="form-control" name="dateBirth" id="dateBirth" autocomplete="off" >
                         </div>
                     </div>
                 </div>
                 <hr>
                 <div class="form-group">
                     <label for="docMan">Документ, удостоверяющий личность</label>
-                    <input type="text" class="form-control" name="docMan" id="docMan" autocomplete="off" required>
+                    <input type="text" class="form-control" name="docMan" id="docMan" autocomplete="off" >
                 </div>
                 <hr>
                 <div class="form-group">
                     <label for="protocol">Протокол</label>
-                    <textarea class="form-control" rows="3" name="protocol" id="protocol" required></textarea>
+                    <textarea class="form-control" rows="3" name="protocol" id="protocol" ></textarea>
                 </div>
 
                 <hr>
                 <div class="form-group">
                     <label for="comment">Примечание</label>
-                    <textarea class="form-control" rows="3" name="comment" id="comment" required></textarea>
+                    <textarea class="form-control" rows="3" name="comment" id="comment" ></textarea>
                 </div>
 
                 <button type="submit" class="btn btn-success">Добавить</button>
